@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner answ = new Scanner(System.in);
-        System.out.println("Введите ваш х: ");
+        System.out.println("Введите ваш х от -20 до 20: ");
         double num = answ.nextDouble();
         System.out.println("Вводите степень (>0): ");
         int k = answ.nextInt();
