@@ -25,7 +25,7 @@ public class Matrix_1 {
         Scanner scn = new Scanner(System.in);
         System.out.println("Enter the dimension of your matrix, please: ");
         dim = scn.nextInt();
-        System.out.println("Be ready to input the elements of matrix...");
+        System.out.println("\nBe ready to input the elements of matrix...");
         matrix = new ArrayList<>();
         ArrayList<Integer> tmp = new ArrayList<>();
         for (int i = 0; i < dim; i++) {
@@ -39,7 +39,7 @@ public class Matrix_1 {
 
     }
     public void printing() {
-        System.out.println("Your matrix: ");
+        System.out.println("\nYour matrix: ");
         for (int i = 0; i < dim; i++) {
             for (int j = 0; j < dim; j++) {
                 System.out.print(matrix.get(i).get(j) + " ");
@@ -50,12 +50,6 @@ public class Matrix_1 {
 
     public ArrayList<Integer> monotone() {
         ArrayList<Integer> rows = new ArrayList<>();
-//        for j in range(len(l)):
-//        flag = False
-//        tmp = l[0][j]
-//        for i in range(len(l)-1):
-//        if (tmp > l[i][j] and l[i][j] < l[i+1][j]) or (tmp < l[i][j] and l[i][j] > l[i+1][j]):
-//        flag = True
         for (int j = 0; j< dim; j++)
         {
             Integer tmp = matrix.get(0).get(j);

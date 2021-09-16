@@ -10,7 +10,7 @@ public class Matrix_2 {
     public void input() {
         matrix = new int[dim][dim];
         Scanner scn = new Scanner(System.in);
-        System.out.println("Be ready to input the elements of matrix...");
+        System.out.println("\nBe ready to input the elements of matrix...");
         for (int i = 0; i < dim; i++) {
             for (int j = 0; j < dim; j++) {
                 System.out.println("Enter the element: ");
@@ -36,7 +36,7 @@ public class Matrix_2 {
     return list_of_perms;
     }
     public void printing() {
-        System.out.println("Your matrix: ");
+        System.out.println("\nYour matrix: ");
         for (int i = 0; i < dim; i++) {
             for (int j = 0; j < dim; j++) {
                 System.out.print(matrix[i][j] + " ");
