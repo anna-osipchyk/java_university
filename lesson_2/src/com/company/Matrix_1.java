@@ -21,7 +21,23 @@ public class Matrix_1 {
         }
 
     }
+    public void input() {
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Enter the dimension of your matrix, please: ");
+        dim = scn.nextInt();
+        System.out.println("Be ready to input the elements of matrix...");
+        matrix = new ArrayList<>();
+        ArrayList<Integer> tmp = new ArrayList<>();
+        for (int i = 0; i < dim; i++) {
+            for (int j = 0; j < dim; j++) {
+                System.out.println("Enter the element: ");
+                tmp.add(scn.nextInt());
+            }
+            matrix.add(tmp);
+            tmp = new ArrayList<>();
+        }
 
+    }
     public void printing() {
         System.out.println("Your matrix: ");
         for (int i = 0; i < dim; i++) {
@@ -34,13 +50,19 @@ public class Matrix_1 {
 
     public ArrayList<Integer> monotone() {
         ArrayList<Integer> rows = new ArrayList<>();
+//        for j in range(len(l)):
+//        flag = False
+//        tmp = l[0][j]
+//        for i in range(len(l)-1):
+//        if (tmp > l[i][j] and l[i][j] < l[i+1][j]) or (tmp < l[i][j] and l[i][j] > l[i+1][j]):
+//        flag = True
         for (int j = 0; j< dim; j++)
         {
-            Integer tmp = matrix.get(j).get(0);
+            Integer tmp = matrix.get(0).get(j);
             boolean flag = false;
             for (int i = 0; i< dim-1; i++)
             {
-                if((tmp > matrix.get(j).get(i) && matrix.get(j).get(i) <matrix.get(j).get(i+1))||(tmp < matrix.get(j).get(i) && matrix.get(j).get(i) >matrix.get(j).get(i+1)))
+                if((tmp > matrix.get(i).get(j) && matrix.get(i).get(j) <matrix.get(i+1).get(j))||(tmp < matrix.get(i).get(j) && matrix.get(i).get(j) >matrix.get(i+1).get(j)))
                 {
                     flag = true;
                     break;
@@ -53,7 +75,6 @@ public class Matrix_1 {
         }
 return rows;
     }
-
 
 }
 
