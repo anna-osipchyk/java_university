@@ -6,10 +6,15 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner answ = new Scanner(System.in);
-        System.out.println("Введите ваш х от -20 до 20: ");
+        System.out.println("Введите ваш х: ");
         double num = answ.nextDouble();
         System.out.println("Вводите степень (>0): ");
         int k = answ.nextInt();
+        double pi = 3.1415926;
+        while (num > 2 * pi) {
+            num -= 2 * pi;
+            }
+
         double sum = Teylor(k, num);
         BigDecimal s = Teylor_big(k,BigDecimal.valueOf(num));
         System.out.println("Ваша сумма в примитивных типах данных: " + sum);
