@@ -32,6 +32,7 @@ public class FirstTask {
         for(String t: list)
         {
             System.out.print(t.trim()+" ");
+
         }
 
     }
