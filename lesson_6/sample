@@ -1,0 +1,10 @@
+C:\Users\annao\.jdks\openjdk-16.0.2\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.1\lib\idea_rt.jar=54873:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.1\bin" -Dfile.encoding=UTF-8 -classpath C:\Users\annao\java_university\lesson_6\out\production\untitled104 com.company.Main
+Exception in thread "main" java.io.FileNotFoundException: sample (Не удается найти указанный файл)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:211)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:153)
+	at java.base/java.util.Scanner.<init>(Scanner.java:639)
+	at com.company.Binary.solve_1(Binary.java:35)
+	at com.company.Main.main(Main.java:8)
+
+Process finished with exit code 1
