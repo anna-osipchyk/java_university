@@ -1,6 +1,0 @@
-Ivanov Petr 6.12.93 5 8 9 5
-Petrov Roman 12.9.85 9 5 8 8
-Baranov Victor 8.11.86 -8 9 9 10
-Petrov Roman 12.9.85 9 8 8 9
-Ivanov Petr 7.9.80 10 10 9 9
-Kozlov Victor 8.2.30 9 9 8 10
