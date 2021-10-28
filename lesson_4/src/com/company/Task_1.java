@@ -3,6 +3,13 @@ import java.util.*;
 import java.util.regex.*;
 import java.io.*;
 import java.util.stream.Collectors;
+//В текстовом файле input.txt в записаны строки, в
+// которых есть скобки. Удалить в каждой строке текст в
+// одинарных скобках и эти скобки. Если есть вложенность,
+// текст во вложенных скобках  не изменять.
+// Использовать  String,  StringBuffer и StringTokenizer.
+//
+
 
 public class Task_1 {
     public static void solv() throws Exception

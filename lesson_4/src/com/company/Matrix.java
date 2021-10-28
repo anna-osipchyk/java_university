@@ -1,5 +1,19 @@
 package com.company;
 import java.util.*;
+//Разработать проект для использования класса Matrix.
+//        Поменять  в к-том столбце матрицы строки с мах и мин элементами.
+//        Вывести на экран исходную и полученную матрицы.
+//        Создать  массив объектов матриц для обработки
+//        Основные методы класса:
+//public Matrix(int _rows, int _columns)
+//public void print()
+//public void setRandom(int n){
+//public int getMaxRow( int k
+//public int getMinRow(int k
+//public void swapRows(int row1, int row2
+//public void printMinItems
+
+
 public class Matrix {
     private int dim;
     private ArrayList<ArrayList<Integer>> matrix;
