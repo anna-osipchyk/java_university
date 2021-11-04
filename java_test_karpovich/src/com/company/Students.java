@@ -10,8 +10,10 @@ public class Students {
     {
 
         String []tmp;
-        FileReader f = new FileReader("test1.txt");
+        FileReader f = new FileReader("java_test_karpovich/test1");
+        FileReader f_new = new FileReader("java_test_karpovich/test2");
         Scanner sc = new Scanner(f);
+        Scanner sc_new = new Scanner(f_new);
         while(sc.hasNextLine())
         {
             HashMap<String, String> student_data = new HashMap<>();
@@ -34,19 +36,98 @@ public class Students {
                 }
                 else if(tmp_data.get("birthday").equals(student_data.get("birthday")))
                 {
-                    continue;
+                    String tmp_marks[] = tmp_data.get("list_of_marks").split(" ");
+
+                    String student_marks[] = student_data.get("list_of_marks").split(" ");
+                    Integer sum_of_marks_tmp = 0;
+                    Integer sum_of_marks_student = 0;
+                    for(String string: tmp_marks)
+                    {
+                        Integer mark = Integer.valueOf(string);
+                        sum_of_marks_tmp += mark;
+                    }
+                    for(String string: student_marks)
+                    {
+                        Integer mark = Integer.valueOf(string);
+                        sum_of_marks_student += mark;
+                    }
+                    if (sum_of_marks_student> sum_of_marks_tmp)
+                    {
+                        students.put(name, student_data);
+                    }
+
                 }
                 else
                 {
                     name += " ";
+                    students.put(name, student_data);
                 }
 
             }
-            students.put(name, student_data);
+            else {
+                students.put(name, student_data);
+            }
 
         }
 
-       // System.out.println(students.entrySet());
+
+        while(sc_new.hasNextLine())
+        {
+            HashMap<String, String> student_data_new = new HashMap<>();
+            tmp = sc_new.nextLine().split(" ");
+            student_data_new.put("birthday", tmp[2]);
+            String marks = "";
+            for(int i =3; i<tmp.length;i++)
+            {
+                marks+= tmp[i];
+                marks+=" ";
+            }
+            student_data_new.put("list_of_marks", marks);
+            String name = tmp[1].toString() +" "+ tmp[0].toString();
+            if (students.containsKey(name))
+            {
+                HashMap<String, String> tmp_data =  students.get(name);
+                if (tmp_data.equals(student_data_new))
+                {
+                    continue;
+                }
+                else if(tmp_data.get("birthday").equals(student_data_new.get("birthday")))
+                {
+                    String tmp_marks[] = tmp_data.get("list_of_marks").split(" ");
+
+                    String student_marks[] = student_data_new.get("list_of_marks").split(" ");
+                    Integer sum_of_marks_tmp = 0;
+                    Integer sum_of_marks_student = 0;
+                    for(String string: tmp_marks)
+                    {
+                        Integer mark = Integer.valueOf(string);
+                        sum_of_marks_tmp += mark;
+                    }
+                    for(String string: student_marks)
+                    {
+                        Integer mark = Integer.valueOf(string);
+                        sum_of_marks_student += mark;
+                    }
+                    if (sum_of_marks_student> sum_of_marks_tmp)
+                    {
+                        students.put(name, student_data_new);
+                    }
+
+                }
+                else
+                {
+                    name += " ";
+                    students.put(name, student_data_new);
+                }
+
+            }
+            else {
+                students.put(name, student_data_new);
+            }
+
+        }
+
+       System.out.println(students.entrySet());
     }
     public void validation()
     {
@@ -89,7 +170,7 @@ public class Students {
     }
     public void new_file() throws Exception
     {
-        File file = new File("Res_1.txt");
+        File file = new File("java_test_karpovich/Res_1.txt");
 
         // Создание файла
         file.createNewFile();
@@ -142,7 +223,7 @@ public class Students {
         }
         String pointResult = String.format("%.3f",point_among_all/4);// 7,001
 
-        File file = new File("Res_3.txt");
+        File file = new File("java_test_karpovich/Res_3.txt");
 
         // Создание файла
         file.createNewFile();
@@ -186,7 +267,7 @@ public class Students {
         System.out.println(ss);
 
 
-        File file_1 = new File("Res_2.txt");
+        File file_1 = new File("java_test_karpovich/Res_2.txt");
 
         // Создание файла
         file_1.createNewFile();
