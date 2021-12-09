@@ -21,13 +21,18 @@ public class Advertiser extends AdvertisementsAbstract {
         }
     }
     public Advertiser(){}
+
+    public String getFirm_name() {
+        return firm_name;
+    }
+
+    public void setFirm_name(String firm_name) {
+        this.firm_name = firm_name;
+    }
+
     @Override
     public String toString(){
         return "Firm name: " + firm_name + "\nproduct: " + product+"\n\n";
-    }
-    @Override
-    public String toStringForWriting(){
-        return firm_name + ","+ product+"\n";
     }
     public int get_index()
     {

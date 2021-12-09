@@ -1,5 +1,8 @@
 package com.company;
 
+import javax.imageio.IIOException;
+import java.beans.ExceptionListener;
+import java.beans.XMLEncoder;
 import java.io.*;
 import java.util.*;
 
@@ -70,7 +73,44 @@ public class Advertisements implements AdvertisementsInterface {
         tvShow = tmp.tvShow;
         objectInputStream.close();
     }
+    public void serialization_XML(String filename) throws IIOException, FileNotFoundException {
+        FileOutputStream fos = new FileOutputStream(filename);
+        XMLEncoder encoder = new XMLEncoder(fos);
+        encoder.setExceptionListener(new ExceptionListener() {
+            @Override
+            public void exceptionThrown(Exception e) {
+                System.out.println(e.toString());
+            }
+        });
+        encoder.writeObject(advertiser);
+        encoder.writeObject(tvShow);
+        encoder.close();
 
+
+    }
+    public void search_company_name()
+    {
+        System.out.println("Please, enter data following the next order: firm name\n");
+        Scanner sc = new Scanner(System.in);
+        String data_1 = sc.nextLine();
+        boolean flag = false;
+        System.out.println("And one more time: name\n");
+       String data_2 = sc.nextLine();
+
+        for (Advertiser value_1 : advertiser.values()) {
+            for (TVShow value_2 : tvShow.values()) {
+                if (value_2.getName().equals(data_2) && value_1.getFirm_name().equals(data_1)) {
+                    flag = true;
+                    System.out.println("Look, what i found:\n" + value_2 + value_1);
+                }
+
+            }
+        }
+        if (!flag) {
+            System.out.println("Didn't find anything");
+        }
+        sc.close();
+    }
     @Override
     public void search() {
         System.out.println("Please, enter data following the next order: firm name, product\nNote: don't use any extra spaces\n");
