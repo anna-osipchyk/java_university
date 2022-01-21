@@ -1,0 +1,5 @@
+1;Showstopper
+2;Critical
+3;Major
+4;Minor
+5;Cosmetic
